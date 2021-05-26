@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"neyham.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="如何优雅地建一个站">
+<meta property="og:url" content="https://neyham.github.io/2020/09/09/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AB%99/index.html">
+<meta property="og:site_name" content="JC Blog">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://test.jemaine.cn/imagepool/WEBHOSTING.png">
+<meta property="article:published_time" content="2020-09-08T18:49:41.000Z">
+<meta property="article:modified_time" content="2021-05-26T16:17:38.509Z">
+<meta property="article:author" content="Jemaine Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://test.jemaine.cn/imagepool/WEBHOSTING.png">
+
+<link rel="canonical" href="https://neyham.github.io/2020/09/09/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AB%99/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>如何优雅地建一个站 | JC Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JC Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://neyham.github.io/2020/09/09/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jemaine Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何优雅地建一个站
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-09 02:49:41" itemprop="dateCreated datePublished" datetime="2020-09-09T02:49:41+08:00">2020-09-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-27 00:17:38" itemprop="dateModified" datetime="2021-05-27T00:17:38+08:00">2021-05-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="http://test.jemaine.cn/imagepool/WEBHOSTING.png"></p>
+<span id="more"></span> 
+
+<h1 id="部署流程"><a href="#部署流程" class="headerlink" title="部署流程"></a>部署流程</h1><h2 id="一、部署虚拟主机"><a href="#一、部署虚拟主机" class="headerlink" title="一、部署虚拟主机"></a>一、部署虚拟主机</h2><p><a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=7198739">Vultr</a><br><a target="_blank" rel="noopener" href="https://www.linode.com/">linode</a><br><a target="_blank" rel="noopener" href="https://cloud.google.com/">GCP</a><br>OS：推荐Ubuntu<br>节点：台湾–&gt;香港–&gt;新加坡–&gt;日本–&gt;孟买–&gt;美国–&gt;其他</p>
+<h2 id="二、测试服务器端口"><a href="#二、测试服务器端口" class="headerlink" title="二、测试服务器端口"></a>二、测试服务器端口</h2><p>部署完成后，检查IP地址的22端口是否打开<br><a target="_blank" rel="noopener" href="http://coolaf.com/tool/port">Coolaf</a><br>如果22端口显示关闭，重新部署<br>测试服务器性能SuperBench：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash</span><br></pre></td></tr></table></figure>
+<h2 id="三、本地端下载SSH连接工具并连接"><a href="#三、本地端下载SSH连接工具并连接" class="headerlink" title="三、本地端下载SSH连接工具并连接"></a>三、本地端下载SSH连接工具并连接</h2><p>Windows:<br><a target="_blank" rel="noopener" href="https://winscp.net/eng/index.php">WinSCP</a><br><a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a><br><a target="_blank" rel="noopener" href="https://xshell.en.softonic.com/">Xshell</a></p>
+<p>IOS &amp; Ipad OS<br><a target="_blank" rel="noopener" href="https://apps.apple.com/cn/app/blink-shell-mosh-ssh-client/id1156707581">Blink</a></p>
+<p>macos:<br>terminal即可</p>
+<h2 id="四、科学上网"><a href="#四、科学上网" class="headerlink" title="四、科学上网"></a>四、科学上网</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</span><br><span class="line">chmod +x shadowsocks-all.sh</span><br><span class="line">./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
+<p>卸载方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocks-all.sh uninstall</span><br></pre></td></tr></table></figure>
+<p>BBR脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; ./bbr.sh</span><br></pre></td></tr></table></figure>
+<h2 id="五、部署宝塔面板"><a href="#五、部署宝塔面板" class="headerlink" title="五、部署宝塔面板"></a>五、部署宝塔面板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、运行环境"><a href="#六、运行环境" class="headerlink" title="六、运行环境"></a>六、运行环境</h2><p>登陆宝塔面板，选择LNMP环境进行安装。</p>
+<h1 id="应用推荐"><a href="#应用推荐" class="headerlink" title="应用推荐"></a>应用推荐</h1><h2 id="私有网盘-Nextcloud"><a href="#私有网盘-Nextcloud" class="headerlink" title="私有网盘-Nextcloud"></a>私有网盘-Nextcloud</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install nextcloud</span><br></pre></td></tr></table></figure>
+
+<h2 id="离线下载-ARIA2"><a href="#离线下载-ARIA2" class="headerlink" title="离线下载-ARIA2"></a>离线下载-ARIA2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="网易云音乐付费音乐解锁-UnblockNeteaseMusic"><a href="#网易云音乐付费音乐解锁-UnblockNeteaseMusic" class="headerlink" title="网易云音乐付费音乐解锁-UnblockNeteaseMusic"></a>网易云音乐付费音乐解锁-UnblockNeteaseMusic</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name unmusic -d -p 4567:8080 nondanee/unblockneteasemusic</span><br></pre></td></tr></table></figure>
+
+<h2 id="边下边播-Simple-Torrent"><a href="#边下边播-Simple-Torrent" class="headerlink" title="边下边播-Simple Torrent"></a>边下边播-Simple Torrent</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/boypt/simple-torrent/master/scripts/quickinstall.sh</span><br></pre></td></tr></table></figure>
+<h2 id="Spacevim"><a href="#Spacevim" class="headerlink" title="Spacevim"></a>Spacevim</h2><p>安装<br>curl -sLf <a target="_blank" rel="noopener" href="https://spacevim.org/install.sh">https://spacevim.org/install.sh</a> | bash<br>卸载<br>curl -sLf <a target="_blank" rel="noopener" href="https://spacevim.org/install.sh">https://spacevim.org/install.sh</a> | bash -s – –uninstall</p>
+<p>vim ~/.SpaceVim/vimrc 添加一行<br>set wrap</p>
+<h2 id="npm-node-js"><a href="#npm-node-js" class="headerlink" title="npm+node.js"></a>npm+node.js</h2><p>1.下载nvm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>2.复制提示内容运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;　</span><br><span class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm　　</span><br><span class="line">[ -s &quot;$NVM_DIR/bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR/bash_completion&quot;  # This loads nvm bash_completion</span><br></pre></td></tr></table></figure>
+<p>3.确认nvm</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command -v nvm</span><br></pre></td></tr></table></figure>
+<p>4.安装nodejs（nodejs已经集成npm）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node</span><br></pre></td></tr></table></figure>
+<p>5.检查nodejs、npm版本，确认安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node --version</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dropbox-Uploader"><a href="#Dropbox-Uploader" class="headerlink" title="Dropbox Uploader"></a>Dropbox Uploader</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/andreafabrizi/Dropbox-Uploader.git</span><br><span class="line">chmod +x dropbox_uploader.sh</span><br><span class="line">./dropbox_uploader.sh</span><br></pre></td></tr></table></figure>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+
+<h2 id="hexo-nexT主题"><a href="#hexo-nexT主题" class="headerlink" title="hexo nexT主题"></a>hexo nexT主题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>设置站点配置文件_config.yml：<br>theme: next</p>
+<h2 id="hexo-github-pages"><a href="#hexo-github-pages" class="headerlink" title="hexo github pages"></a>hexo github pages</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="nexT主题看板娘"><a href="#nexT主题看板娘" class="headerlink" title="nexT主题看板娘"></a>nexT主题看板娘</h2><p>/themes/next/layout/_layout.swig 在body中插入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="nexT主题Canvas-nest风格"><a href="#nexT主题Canvas-nest风格" class="headerlink" title="nexT主题Canvas-nest风格"></a>nexT主题Canvas-nest风格</h2><p>/themes/next</p>
+<p>Canvas-nest 风格</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest</span><br></pre></td></tr></table></figure>
+<p>修改next config文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="w3m-命令行浏览器"><a href="#w3m-命令行浏览器" class="headerlink" title="w3m-命令行浏览器"></a>w3m-命令行浏览器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install w3m</span><br></pre></td></tr></table></figure>
+
+<h2 id="newsboat-命令行RSS阅读器"><a href="#newsboat-命令行RSS阅读器" class="headerlink" title="newsboat-命令行RSS阅读器"></a>newsboat-命令行RSS阅读器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install newsboat</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install newsboat</span><br></pre></td></tr></table></figure>
+
+<h2 id="Midnight-commander-命令行文件管理器"><a href="#Midnight-commander-命令行文件管理器" class="headerlink" title="Midnight commander-命令行文件管理器"></a>Midnight commander-命令行文件管理器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install mc</span><br></pre></td></tr></table></figure>
+<h2 id="Linux仪表盘"><a href="#Linux仪表盘" class="headerlink" title="Linux仪表盘"></a>Linux仪表盘</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install blessed blessed-contrib</span><br></pre></td></tr></table></figure>
+<h2 id="Updog"><a href="#Updog" class="headerlink" title="Updog"></a>Updog</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install updog</span><br></pre></td></tr></table></figure>
+<h2 id="Nethack-Roguelike游戏"><a href="#Nethack-Roguelike游戏" class="headerlink" title="Nethack-Roguelike游戏"></a>Nethack-Roguelike游戏</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install nethack-console</span><br></pre></td></tr></table></figure>
+<h2 id="Rsshub"><a href="#Rsshub" class="headerlink" title="Rsshub"></a>Rsshub</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/DIYgod/RSSHub</span><br><span class="line">cd RSSHub</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<h2 id="Fresh-rss"><a href="#Fresh-rss" class="headerlink" title="Fresh rss"></a>Fresh rss</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">下载文件并进入文件夹</span><br><span class="line">git clone https://github.com/FreshRSS/FreshRSS.git</span><br><span class="line">cd ./FreshRSS/</span><br><span class="line">#创建文件夹，并且数据会保存在这里</span><br><span class="line">mkdir -p ./data/</span><br><span class="line">#安装镜像，8080端口自己定义</span><br><span class="line">docker run -dit --restart unless-stopped --log-opt max-size=10m \</span><br><span class="line">    -v $(pwd)/data:/var/www/FreshRSS/data \</span><br><span class="line">    -p 8080:80 \</span><br><span class="line">    --name freshrss freshrss/freshrss</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ubuntu-设置容器编码为UTF-8"><a href="#Ubuntu-设置容器编码为UTF-8" class="headerlink" title="Ubuntu 设置容器编码为UTF-8"></a>Ubuntu 设置容器编码为UTF-8</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y locales</span><br><span class="line">locale-gen &quot;en_US.UTF-8&quot;</span><br><span class="line">update-locale LC_ALL=&quot;en_US.UTF-8&quot;</span><br><span class="line">export LC_ALL=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bash美化"><a href="#Bash美化" class="headerlink" title="Bash美化"></a>Bash美化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc</span><br><span class="line">添加下行</span><br><span class="line">export PS1=&quot;Time:\[\033[1;35m\]\T     \[\033[0m\]User:\[\033[1;33m\]\u     \[\033[0m\]Dir:\[\033[1;32m\]\w\[\033[0m\]\n\$&quot;</span><br><span class="line">退出vim</span><br><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/09/PRC%E4%BC%81%E4%B8%9A%E4%BC%9A%E8%AE%A1%E5%87%86%E5%88%99/" rel="prev" title="PRC企业会计准则">
+      <i class="fa fa-chevron-left"></i> PRC企业会计准则
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/09/%E3%80%8A%E5%95%86%E4%B8%9A%E9%93%B6%E8%A1%8C%E9%87%91%E8%9E%8D%E8%B5%84%E4%BA%A7%E9%A3%8E%E9%99%A9%E5%88%86%E7%B1%BB%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95%E3%80%8B%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF%E4%BA%94%E7%BA%A7%E5%88%86%E7%B1%BB%E5%8F%8A%E5%AE%A1%E9%98%85%E9%87%8D%E7%82%B9%E6%A6%82%E8%A7%88/" rel="next" title="五级分类审阅重点概览">
+      五级分类审阅重点概览 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">部署流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%83%A8%E7%BD%B2%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="nav-number">1.1.</span> <span class="nav-text">一、部署虚拟主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B5%8B%E8%AF%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">二、测试服务器端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9C%AC%E5%9C%B0%E7%AB%AF%E4%B8%8B%E8%BD%BDSSH%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7%E5%B9%B6%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.3.</span> <span class="nav-text">三、本地端下载SSH连接工具并连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91"><span class="nav-number">1.4.</span> <span class="nav-text">四、科学上网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E9%83%A8%E7%BD%B2%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="nav-number">1.5.</span> <span class="nav-text">五、部署宝塔面板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">1.6.</span> <span class="nav-text">六、运行环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90"><span class="nav-number">2.</span> <span class="nav-text">应用推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%81%E6%9C%89%E7%BD%91%E7%9B%98-Nextcloud"><span class="nav-number">2.1.</span> <span class="nav-text">私有网盘-Nextcloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD-ARIA2"><span class="nav-number">2.2.</span> <span class="nav-text">离线下载-ARIA2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E4%BB%98%E8%B4%B9%E9%9F%B3%E4%B9%90%E8%A7%A3%E9%94%81-UnblockNeteaseMusic"><span class="nav-number">2.3.</span> <span class="nav-text">网易云音乐付费音乐解锁-UnblockNeteaseMusic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E4%B8%8B%E8%BE%B9%E6%92%AD-Simple-Torrent"><span class="nav-number">2.4.</span> <span class="nav-text">边下边播-Simple Torrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spacevim"><span class="nav-number">2.5.</span> <span class="nav-text">Spacevim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-node-js"><span class="nav-number">2.6.</span> <span class="nav-text">npm+node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropbox-Uploader"><span class="nav-number">2.7.</span> <span class="nav-text">Dropbox Uploader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.8.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-nexT%E4%B8%BB%E9%A2%98"><span class="nav-number">2.9.</span> <span class="nav-text">hexo nexT主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-github-pages"><span class="nav-number">2.10.</span> <span class="nav-text">hexo github pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nexT%E4%B8%BB%E9%A2%98%E7%9C%8B%E6%9D%BF%E5%A8%98"><span class="nav-number">2.11.</span> <span class="nav-text">nexT主题看板娘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nexT%E4%B8%BB%E9%A2%98Canvas-nest%E9%A3%8E%E6%A0%BC"><span class="nav-number">2.12.</span> <span class="nav-text">nexT主题Canvas-nest风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#w3m-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">2.13.</span> <span class="nav-text">w3m-命令行浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#newsboat-%E5%91%BD%E4%BB%A4%E8%A1%8CRSS%E9%98%85%E8%AF%BB%E5%99%A8"><span class="nav-number">2.14.</span> <span class="nav-text">newsboat-命令行RSS阅读器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Midnight-commander-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">2.15.</span> <span class="nav-text">Midnight commander-命令行文件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E4%BB%AA%E8%A1%A8%E7%9B%98"><span class="nav-number">2.16.</span> <span class="nav-text">Linux仪表盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updog"><span class="nav-number">2.17.</span> <span class="nav-text">Updog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nethack-Roguelike%E6%B8%B8%E6%88%8F"><span class="nav-number">2.18.</span> <span class="nav-text">Nethack-Roguelike游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rsshub"><span class="nav-number">2.19.</span> <span class="nav-text">Rsshub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fresh-rss"><span class="nav-number">2.20.</span> <span class="nav-text">Fresh rss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-%E8%AE%BE%E7%BD%AE%E5%AE%B9%E5%99%A8%E7%BC%96%E7%A0%81%E4%B8%BAUTF-8"><span class="nav-number">2.21.</span> <span class="nav-text">Ubuntu 设置容器编码为UTF-8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash%E7%BE%8E%E5%8C%96"><span class="nav-number">2.22.</span> <span class="nav-text">Bash美化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jemaine Chen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jemaine Chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='' opacity='' zIndex='' count='' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+</body>
+</html>
