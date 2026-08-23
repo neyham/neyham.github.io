@@ -39,7 +39,7 @@ header {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .wordmark {
@@ -54,11 +54,6 @@ header nav a {
 }
 
 header nav a:hover { text-decoration: underline; }
-
-.lede {
-  font-size: 1.15rem;
-  margin: 0 0 3rem;
-}
 
 h1 {
   font-size: 1.35rem;
@@ -81,22 +76,21 @@ h3 {
 
 p { margin: 0 0 1rem; }
 
-.section-label {
-  color: var(--mute);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0 0 1.25rem;
-}
-
 .project {
-  padding: 1.25rem 0;
+  padding: 1.5rem 0;
   border-top: 1px solid var(--line);
 }
 
 .project:last-of-type { border-bottom: 1px solid var(--line); }
 
-.project h2 { margin: 0 0 0.4rem; }
+.project h2 { margin: 0 0 0.75rem; }
+
+.project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 0.85rem;
+}
 
 .project p { color: var(--mute); margin-bottom: 0.5rem; }
 
@@ -163,12 +157,6 @@ hr {
   border: 0;
   border-top: 1px solid var(--line);
   margin: 2rem 0;
-}
-
-footer {
-  margin-top: 4rem;
-  color: var(--mute);
-  font-size: 0.85rem;
 }
 
 @media (max-width: 520px) {
