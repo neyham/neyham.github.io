@@ -85,11 +85,16 @@ p { margin: 0 0 1rem; }
 
 .project h2 { margin: 0 0 0.75rem; }
 
-.project img {
+.project img,
+.project video {
   display: block;
   width: 100%;
   height: auto;
   margin: 0 0 0.85rem;
+}
+
+.project video {
+  background: var(--bg);
 }
 
 .project p { color: var(--mute); margin-bottom: 0.5rem; }
