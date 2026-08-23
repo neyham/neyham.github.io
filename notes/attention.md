@@ -30,8 +30,9 @@ We can map these three concepts perfectly to life decisions.
 **In life**: Query is the **specific problem, goal, or inner confusion** you're currently facing.
 
 For example:
+
 - "How should I choose my career?"
-- "How can Irebuild a relationship?"
+- "How can I rebuild a relationship?"
 - "What's the next step for my startup?"
 
 **Application**: A clear, well-defined Query is the first step toward an efficient life.
@@ -47,6 +48,7 @@ If you don't even know what you're "querying" for, your "attention" will scatter
 **In life**: Key is the "retrievable label" for all your life experiences and knowledge base.
 
 For example:
+
 - Your college major
 - A failed startup experience
 - A book that opened your mind
@@ -240,7 +242,7 @@ Because **choice itself is resisting entropy increase.**
 
 The universe tends toward disorder, toward chaos, toward stillness.
 
-And anproactive "attention allocation"—it's saying: "No, I'm going this way."
+And a proactive "attention allocation"—it's saying: "No, I'm going this way."
 
 This isn't "freedom."
 
