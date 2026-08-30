@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>moshVR privacy — neyham</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="wordmark" href="/">neyham</a>
+      <nav><a href="/moshvr/">moshVR</a></nav>
+    </header>
+    <h1>moshVR Privacy Policy</h1>
+    <p><em>Last updated: 2026-08-31</em></p>
+    <p>moshVR is a terminal you run on your own Meta Quest headset. The developer of moshVR does not operate accounts, analytics, or a backend that receives your SSH sessions, passwords, keys, or recordings.</p>
+    <p>This is not a claim that <strong>no</strong> software on the headset processes data. Meta Spatial SDK and Horizon OS may collect or receive technical information under Meta’s terms (including Meta Platform Technologies). The developer does not control that processing.</p>
+
+    <h2>How to delete data</h2>
+    <p>You do not need to contact the developer to delete local data:</p>
+    <ul>
+      <li><strong>Host profiles</strong> — delete a host from the connections list.</li>
+      <li><strong>Speech API key</strong> — Settings → Clear API key. Saving an empty key field does <strong>not</strong> clear an existing key; use the Clear action. After Clear, the previous ciphertext is not kept.</li>
+      <li><strong>Known hosts</strong> — Settings → Forget a host, or Clear all known hosts.</li>
+      <li><strong>Uninstall or Android “Clear storage / Clear data”</strong> — removes app-private files (profiles, settings, known hosts, encrypted blobs). The Android Keystore key for this app is removed with the app.</li>
+    </ul>
+    <p>The developer never receives a copy of this data, so there is nothing for the developer to delete on request.</p>
+
+    <h2>Data stored on your device</h2>
+    <ul>
+      <li><strong>Host profiles</strong> (hostname, port, username, optional startup command) in app-private storage.</li>
+      <li><strong>Secrets</strong> (passwords, SSH private keys, optional speech API keys) are encrypted with an <strong>Android Keystore-backed</strong> AES-256-GCM key before they are written to disk. That is not a guarantee of StrongBox or TEE hardware on every device.</li>
+      <li><strong>Known host keys</strong> are stored only after you explicitly accept the host, algorithm, and fingerprint. You can forget or clear them in Settings.</li>
+      <li><strong>Clipboard</strong> text is copied or pasted only when you use terminal copy/paste. It is not stored by moshVR or uploaded to the developer.</li>
+      <li><strong>Hands, head, and controllers</strong> are used for pointing, grabbing the panel, scrolling, and optional microgestures. Those signals are not recorded or uploaded by moshVR.</li>
+      <li><strong>Passthrough</strong> is the system compositor. moshVR does not request camera permission and does not access or save raw camera or passthrough images.</li>
+    </ul>
+
+    <h2>Network</h2>
+    <p><strong>SSH / mosh</strong> go only to servers you configure. Traffic is between the headset and that host. The host operator may log connections under their own policy and jurisdiction.</p>
+    <p><strong>Optional cloud speech-to-text</strong> is off until you add an API key <strong>and</strong> consent (first recording prompt or Settings). Then a short in-memory WAV is POSTed to the OpenAI-compatible <code>/audio/transcriptions</code> URL you set.</p>
+    <p>Default provider: <strong>SiliconFlow</strong>, endpoint <code>https://api.siliconflow.cn/v1</code>. Purpose: turn speech into text for the input box. You still confirm send. Audio is not written to app storage. The request may be retried up to three times if the network fails. The developer does not keep the audio or the transcript.</p>
+    <p>Processing for the default endpoint may occur in the People’s Republic of China. Retention and deletion at SiliconFlow are governed by SiliconFlow’s own terms (see siliconflow.cn). A custom endpoint is entirely your responsibility.</p>
+    <p>On pause, stop, headset focus loss, cancel, or the 20-second cap, recording is discarded and any in-flight upload is cancelled. The cap does <strong>not</strong> auto-upload.</p>
+    <p>With no key, in-app MIC does not record. Quest keyboard dictation, if you use it, is handled by Horizon OS under Meta’s terms.</p>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>INTERNET</strong> — SSH/mosh and optional transcription HTTPS calls.</li>
+      <li><strong>RECORD_AUDIO</strong> — only while you are recording with the in-app MIC, after you grant it. The terminal works without a microphone.</li>
+      <li><strong>com.oculus.permission.HAND_TRACKING</strong> — optional hand tracking / microgestures in immersive mode.</li>
+      <li><strong>com.oculus.permission.RENDER_MODEL</strong> — optional controller render models.</li>
+    </ul>
+    <p>The app does not use <code>ACCESS_NETWORK_STATE</code> or <code>MODIFY_AUDIO_SETTINGS</code>.</p>
+
+    <h2>Contact</h2>
+    <p><a href="/moshvr/">https://neyham.github.io/moshvr/</a></p>
+  </div>
+</body>
+</html>
