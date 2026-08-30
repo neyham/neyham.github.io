@@ -30,7 +30,7 @@
     <h2>Data stored on your device</h2>
     <ul>
       <li><strong>Host profiles</strong> (hostname, port, username, optional startup command) in app-private storage.</li>
-      <li><strong>Secrets</strong> (passwords, SSH private keys, optional speech API keys) are encrypted with an <strong>Android Keystore-backed</strong> AES-256-GCM key before they are written to disk. That is not a guarantee of StrongBox or TEE hardware on every device.</li>
+      <li><strong>Secrets</strong> (passwords, SSH private keys, optional speech API keys) are encrypted with an <strong>Android Keystore-backed</strong> AES-256-GCM key before they are written to disk. That is not a guarantee of StrongBox or TEE hardware on every device. Encryption at rest is not the same as “never leaves the device”: an SSH password is sent to the host you configured; a speech API key is sent to the speech endpoint you configured.</li>
       <li><strong>Known host keys</strong> are stored only after you explicitly accept the host, algorithm, and fingerprint. You can forget or clear them in Settings.</li>
       <li><strong>Clipboard</strong> text is copied or pasted only when you use terminal copy/paste. It is not stored by moshVR or uploaded to the developer.</li>
       <li><strong>Hands, head, and controllers</strong> are used for pointing, grabbing the panel, scrolling, and optional microgestures. Those signals are not recorded or uploaded by moshVR.</li>
@@ -38,11 +38,12 @@
     </ul>
 
     <h2>Network</h2>
-    <p><strong>SSH / mosh</strong> go only to servers you configure. Traffic is between the headset and that host. The host operator may log connections under their own policy and jurisdiction.</p>
-    <p><strong>Optional cloud speech-to-text</strong> is off until you add an API key <strong>and</strong> consent (first recording prompt or Settings). Then a short in-memory WAV is POSTed to the OpenAI-compatible <code>/audio/transcriptions</code> URL you set.</p>
-    <p>Default provider: <strong>SiliconFlow</strong>, endpoint <code>https://api.siliconflow.cn/v1</code>. Purpose: turn speech into text for the input box. You still confirm send. Audio is not written to app storage. The request may be retried up to three times if the network fails. The developer does not keep the audio or the transcript.</p>
-    <p>Processing for the default endpoint may occur in the People’s Republic of China. Retention and deletion at SiliconFlow are governed by SiliconFlow’s own terms (see siliconflow.cn). A custom endpoint is entirely your responsibility.</p>
-    <p>On pause, stop, headset focus loss, cancel, or the 20-second cap, recording is discarded and any in-flight upload is cancelled. The cap does <strong>not</strong> auto-upload.</p>
+    <p><strong>SSH / mosh</strong> go only to servers you configure. Terminal text is sent to that host when you type, use extra keys, or tap Send on the composer. The host operator may log connections under their own policy and jurisdiction.</p>
+    <p><strong>Optional cloud speech-to-text</strong> is off until you add an API key <strong>and</strong> consent for the current endpoint (first recording prompt or Settings). Changing the API base URL clears consent until you opt in again.</p>
+    <p>Each transcription POST sends: the in-memory WAV <strong>audio</strong>, the <strong>model</strong> name, and your <strong>Bearer API key</strong>, to the OpenAI-compatible <code>/audio/transcriptions</code> URL you set. The app does not write the clip to storage. The request may be retried up to three times if the network fails.</p>
+    <p>Default provider: <strong>SiliconFlow</strong>, endpoint <code>https://api.siliconflow.cn/v1</code>, default model <code>FunAudioLLM/SenseVoiceSmall</code> (listed on SiliconFlow’s current STT API docs; not verified here with a live key). Purpose: turn speech into composer text. You still tap Send before that text goes to the SSH host. Tapping <strong>MIC STOP</strong> ends the recording and <strong>does</strong> start the upload.</p>
+    <p>Processing for the default endpoint may occur in the People’s Republic of China. Retention and deletion at SiliconFlow follow <a href="https://docs.siliconflow.cn/en/legals/privacy-policy">SiliconFlow’s privacy policy</a>. A custom HTTPS endpoint is entirely your responsibility. Non-HTTPS speech URLs are rejected.</p>
+    <p><strong>Discard vs upload:</strong> Android Activity <code>onPause</code> / <code>onStop</code>, headset focus loss, Cancel, or the 20-second recording cap <strong>discard</strong> the clip and cancel any in-flight upload. Those paths do <strong>not</strong> transcribe. Tapping STOP in the app is the opposite: it finishes the take and sends it to the speech endpoint if you have already consented.</p>
     <p>With no key, in-app MIC does not record. Quest keyboard dictation, if you use it, is handled by Horizon OS under Meta’s terms.</p>
 
     <h2>Permissions</h2>
@@ -56,6 +57,7 @@
 
     <h2>Contact</h2>
     <p><a href="/moshvr/">https://neyham.github.io/moshvr/</a></p>
+    <p>There is no separate email or support form yet.</p>
   </div>
 </body>
 </html>
