@@ -4,4 +4,4 @@ The **one** personal site. Both [neyham.github.io](https://neyham.github.io) and
 
 Static HTML. Projects on the home page; notes live under `/notes`.
 
-Open research tools (annual-report library, regulatory news) are links on the research card. Member desks (fees, penalties, report dashboard) are not listed here; each has its own login on its subdomain.
+Public research tools are listed as their own projects: finaudit, regnews, and report. Member desks (fees, penalties, report dashboard) are not listed here; each has its own login on its subdomain.
