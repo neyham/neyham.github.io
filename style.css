@@ -104,6 +104,16 @@ p { margin: 0 0 1rem; }
   word-break: break-all;
 }
 
+.project .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+}
+
+.project .links a { color: var(--mute); }
+
 .notes { list-style: none; padding: 0; margin: 0; }
 
 .notes li {
