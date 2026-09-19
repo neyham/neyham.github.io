@@ -13,10 +13,18 @@
       <nav><a href="/notes/">notes</a></nav>
     </header>
     <h1>moshVR</h1>
-    <img src="/media/moshvr.jpg" width="1280" height="720" alt="A Meta Quest headset on a sunlit oak desk">
-    <p>A native mosh and SSH terminal for Meta Quest. No PC streaming. Optional voice transcription if you add your own speech API key. While the app process stays alive, mosh can recover from network drops.</p>
-    <p>Source is GPLv3. A standalone public source repository has not been published yet.</p>
-    <p><a href="privacy/">Privacy policy</a></p>
+    <img src="/media/moshvr-quest3.png" width="1080" height="1080" alt="Quest 3 capture of moshVR's empty immersive workspace, digital rain and tracked pointer">
+    <p class="meta">Quest 3 · 0.1.0 development build · empty workspace, no SSH session shown.</p>
+    <p>A native mosh and SSH terminal for Meta Quest. The client runs on the headset; the shell runs on your server. No PC streaming or companion app. Confirm text in the composer before anything is sent to the host.</p>
+    <p>Work in a Home panel or a movable immersive workspace. Switch sessions, scroll with the controller, and use the Quest keyboard plus terminal extra keys. Keep the room in view with passthrough, or use the digital-rain environment.</p>
+    <p>Optional cloud speech puts a transcription in the composer. You need your own API key, endpoint consent, and confirmation that you are 18 or older. MIC STOP uploads audio to the provider you configured. The terminal works without a microphone.</p>
+    <p>Source is public under GPLv3. This is an Early Access development build: debug-signed, not a long-lived release key. Sideload needs Developer Mode. A reachable SSH host is required; mosh also needs <code>mosh-server</code> and UDP. A SideQuest listing is pending review and is not public yet.</p>
+    <p class="links">
+      <a href="https://github.com/neyham/moshvr">source</a>
+      <a href="https://github.com/neyham/moshvr/blob/main/docs/BUILDING.md">build</a>
+      <a href="https://github.com/neyham/moshvr/issues">issues</a>
+      <a href="privacy/">privacy</a>
+    </p>
   </div>
 </body>
 </html>

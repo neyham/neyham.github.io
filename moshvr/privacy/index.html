@@ -13,7 +13,7 @@
       <nav><a href="/moshvr/">moshVR</a></nav>
     </header>
     <h1>moshVR Privacy Policy</h1>
-    <p><em>Last updated: 2026-08-31</em></p>
+    <p><em>Last updated: 2026-09-07</em></p>
     <p>moshVR is a terminal you run on your own Meta Quest headset. The developer of moshVR does not operate accounts, analytics, or a backend that receives your SSH sessions, passwords, keys, or recordings.</p>
     <p>This is not a claim that <strong>no</strong> software on the headset processes data. Meta Spatial SDK and Horizon OS may collect or receive technical information under Meta’s terms (including Meta Platform Technologies). The developer does not control that processing.</p>
 
@@ -25,7 +25,7 @@
       <li><strong>Known hosts</strong> — Settings → Forget a host, or Clear all known hosts.</li>
       <li><strong>Uninstall or Android “Clear storage / Clear data”</strong> — removes app-private files (profiles, settings, known hosts, encrypted blobs). The Android Keystore key for this app is removed with the app.</li>
     </ul>
-    <p>The developer never receives a copy of this data, so there is nothing for the developer to delete on request.</p>
+    <p>The developer never receives a copy of this data, so there is nothing for the developer to delete on request. Product page: <a href="/moshvr/">https://neyham.github.io/moshvr/</a></p>
 
     <h2>Data stored on your device</h2>
     <ul>
@@ -39,10 +39,10 @@
 
     <h2>Network</h2>
     <p><strong>SSH / mosh</strong> go only to servers you configure. Terminal text is sent to that host when you type, use extra keys, or tap Send on the composer. The host operator may log connections under their own policy and jurisdiction.</p>
-    <p><strong>Optional cloud speech-to-text</strong> is off until you add an API key <strong>and</strong> consent for the current endpoint (first recording prompt or Settings). Changing the API base URL clears consent until you opt in again.</p>
-    <p>Each transcription POST sends: the in-memory WAV <strong>audio</strong>, the <strong>model</strong> name, and your <strong>Bearer API key</strong>, to the OpenAI-compatible <code>/audio/transcriptions</code> URL you set. The app does not write the clip to storage. The app makes at most three send attempts (the first plus retries) if a try fails.</p>
+    <p><strong>Optional cloud speech-to-text</strong> is off until you add an API key <strong>and</strong> consent for the current endpoint (first recording prompt or Settings). Changing the provider or API base URL clears consent until you opt in again. You must separately confirm you are 18 or older and eligible to use your provider. The app stores the current consent’s endpoint, disclosure version, device-clock timestamp and adult confirmation locally. This is self-attestation, not verified age. Old consent without this record requires a new opt-in. Turning off cloud speech or clearing its API key removes this record. It is not sent to the developer. Before STOP uploads, the app checks consent again and discards the recording if the provider, endpoint, model, key, legacy app ID or consent changed during the take.</p>
+    <p>Each transcription POST sends the in-memory WAV <strong>audio</strong>, the <strong>model/resource ID</strong>, and your <strong>API credentials</strong> to the selected HTTPS endpoint. SiliconFlow / OpenAI-compatible providers use multipart <code>/audio/transcriptions</code> and Bearer authentication. Qwen ASR uses base64 audio in <code>/chat/completions</code> with Bearer authentication. Volcengine speech uses base64 audio in <code>/recognize/flash</code>, speech-key headers (or legacy App ID and Access Token), a random request ID, and a fixed app label. The app does not write the clip to storage. Each STOP starts at most one send attempt. Automatic retries and redirects are disabled; a failed request requires a new user recording.</p>
     <p>Default provider: <strong>SiliconFlow</strong>, endpoint <code>https://api.siliconflow.cn/v1</code>, default model <code>FunAudioLLM/SenseVoiceSmall</code> (listed on SiliconFlow’s current STT API docs; not verified here with a live key). Purpose: turn speech into composer text. You still tap Send before that text goes to the SSH host. Tapping <strong>MIC STOP</strong> ends the recording and <strong>does</strong> start the upload.</p>
-    <p>Processing for the default endpoint may occur in the People’s Republic of China. Retention and deletion at SiliconFlow follow <a href="https://docs.siliconflow.cn/en/legals/privacy-policy">SiliconFlow’s privacy policy</a>. A custom HTTPS endpoint is entirely your responsibility. Non-HTTPS speech URLs are rejected.</p>
+    <p>Processing for the default endpoint may occur in the People’s Republic of China. Retention and deletion at SiliconFlow follow <a href="https://docs.siliconflow.cn/en/legals/privacy-policy">SiliconFlow’s privacy policy</a>. Qwen and Volcengine are optional providers. Qwen’s preset uses the Beijing endpoint; choose the endpoint matching your account region. Review the chosen provider’s privacy and retention terms before enabling uploads. Keys are stored separately per provider using Android Keystore encryption. Switching providers keeps saved keys but requires a fresh upload consent. Clear each saved key in its provider settings, or clear app data to remove all local settings. A custom HTTPS endpoint is entirely your responsibility. Non-HTTPS speech URLs are rejected.</p>
     <p><strong>Discard vs upload:</strong> If you leave (Activity pause/stop, focus loss, Cancel, or the 20-second cap) <strong>before</strong> tapping STOP, moshVR does not start the transcription POST. If you already tapped STOP, Cancel only stops the local OkHttp Call and coroutine. A request that already left the device may still be processed by the provider. Tapping STOP finishes the take and starts the upload if you have consented.</p>
     <p>With no key, in-app MIC does not record. Quest keyboard dictation, if you use it, is handled by Horizon OS under Meta’s terms.</p>
 
@@ -57,7 +57,7 @@
 
     <h2>Contact</h2>
     <p><a href="/moshvr/">https://neyham.github.io/moshvr/</a></p>
-    <p>There is no separate email or support form yet.</p>
+    <p>Bugs: <a href="https://github.com/neyham/moshvr/issues">github.com/neyham/moshvr/issues</a>. There is no separate email, chat, or paid support.</p>
   </div>
 </body>
 </html>
