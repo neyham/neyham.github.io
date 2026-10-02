@@ -2,80 +2,333 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>neyham</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="A small collection of working software by neyham: moshVR, AI Usage Dashboard, ha-agent-speaker, CAS Chill and herdr-paddock.">
+  <meta name="theme-color" content="#f1eee6">
+  <meta property="og:title" content="neyham">
+  <meta property="og:description" content="A small collection of working things.">
+  <meta property="og:image" content="https://neyham.github.io/media/dashboard.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Josefin+Sans:wght@400;600;700&family=Bangers&family=Oswald:wght@500;700&family=Poiret+One&display=swap">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="wordmark" href="./">neyham</a>
-      <nav><a href="notes/">notes</a></nav>
-    </header>
 
-    <section class="project">
+<header class="bar">
+  <a class="mark" href="./">neyham</a>
+  <nav class="caps">
+    <a href="notes/">Notes</a>
+    <a href="https://github.com/neyham">GitHub</a>
+  </nav>
+</header>
+
+<section class="intro">
+  <h1>A small collection of <em>working</em> things.</h1>
+  <p>Real software, hung in styles borrowed from art history. Choose a plate to read its wall label.</p>
+</section>
+
+<main class="wall">
+
+  <!-- moshVR · Bauhaus -->
+  <figure class="piece">
+    <button class="plate" data-id="moshvr" aria-label="moshVR — open wall label">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <rect width="400" height="400" fill="#efe6cf"/>
+        <circle class="sun" cx="262" cy="150" r="108" fill="#c0302c"/>
+        <rect x="-60" y="232" width="540" height="30" fill="#1b1b1f" transform="rotate(-16 200 247)"/>
+        <rect x="30" y="30" width="12" height="176" fill="#1b1b1f"/>
+        <rect x="52" y="30" width="4" height="120" fill="#1b1b1f"/>
+        <path d="M98 158 C74 156 60 166 52 186" stroke="#1b1b1f" stroke-width="10" fill="none"/>
+        <rect x="96" y="112" width="196" height="92" rx="22" fill="#1b1b1f"/>
+        <circle cx="150" cy="158" r="28" fill="#2b5aa8"/>
+        <circle cx="238" cy="158" r="28" fill="#e8b730"/>
+        <path d="M70 312 l34 24 l-34 24" stroke="#1b1b1f" stroke-width="12" fill="none" stroke-linecap="square"/>
+        <rect class="caret" x="118" y="350" width="54" height="11" fill="#c0302c"/>
+        <text x="372" y="338" text-anchor="end" font-family="Josefin Sans" font-weight="600" font-size="11" letter-spacing="3" fill="#1b1b1f">MOSH · SSH · QUEST</text>
+        <text x="372" y="372" text-anchor="end" font-family="Josefin Sans" font-weight="700" font-size="30" letter-spacing="4" fill="#1b1b1f">MOSHVR</text>
+      </svg>
+    </button>
+    <figcaption class="label">
+      <span class="mv">Bauhaus</span>
       <h2>moshVR</h2>
-      <img src="media/moshvr-banner.svg" width="1280" height="480" alt="moshVR banner: Native terminal. Spatial workspace.">
-      <p>A native mosh and SSH terminal for Meta Quest. No PC streaming. Confirm text to the host. Source is public; available on SideQuest.</p>
-      <p class="links">
-        <a href="moshvr/">site</a>
-        <a href="https://sidequestvr.com/app/62512">sidequest</a>
-        <a href="https://github.com/neyham/moshvr">github</a>
-        <a href="moshvr/privacy/">privacy</a>
-      </p>
-    </section>
+      <p>After Dessau, 1923. A native terminal for Meta Quest.</p>
+    </figcaption>
+  </figure>
 
-    <section class="project">
-      <h2>herdr-paddock</h2>
-      <img src="media/paddock.gif" width="1000" height="419" alt="paddock card wall: blocked agents bleat at the top of the feed">
-      <p>A card-wall feed for your herdr flock. Blocked agents bleat to the top. Each card is the agent’s output, cleaned. Plain SSH — no relay, no web server.</p>
-      <a class="src" href="https://github.com/neyham/herdr-paddock">github.com/neyham/herdr-paddock</a>
-    </section>
-
-    <section class="project">
+  <!-- AI Usage Dashboard · De Stijl -->
+  <figure class="piece">
+    <button class="plate" data-id="dashboard" aria-label="AI Usage Dashboard — open wall label">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <rect width="400" height="400" fill="#f6f1e6"/>
+        <rect width="140" height="150" fill="#c62128"/>
+        <rect x="140" y="290" width="150" height="110" fill="#ffc21a"/>
+        <rect x="290" y="0" width="110" height="60" fill="#1b1b1f"/>
+        <rect x="290" y="290" width="110" height="110" fill="#1f4aa8"/>
+        <rect x="0" y="150" width="140" height="250" fill="#f6f1e6"/>
+        <path d="M30 120 A60 60 0 0 1 110 60" stroke="#f6f1e6" stroke-width="10" fill="none"/>
+        <circle cx="215" cy="140" r="56" stroke="#e3dccb" stroke-width="16" fill="none"/>
+        <circle class="gauge" cx="215" cy="140" r="56" stroke="#1b1b1f" stroke-width="16" fill="none"
+          stroke-dasharray="351.9" stroke-dashoffset="95" transform="rotate(-90 215 140)"/>
+        <text x="215" y="150" text-anchor="middle" font-family="Josefin Sans" font-weight="700" font-size="28" fill="#1b1b1f">73%</text>
+        <rect x="306" y="100" width="78" height="10" fill="#e3dccb"/>
+        <rect class="meter" x="306" y="100" width="44" height="10" fill="#1b1b1f"/>
+        <rect x="306" y="150" width="78" height="10" fill="#e3dccb"/>
+        <rect class="meter" x="306" y="150" width="24" height="10" fill="#c62128"/>
+        <rect x="306" y="200" width="78" height="10" fill="#e3dccb"/>
+        <rect class="meter" x="306" y="200" width="36" height="10" fill="#1f4aa8"/>
+        <text x="306" y="250" font-family="Josefin Sans" font-weight="600" font-size="10" letter-spacing="2.5" fill="#1b1b1f">5H · 7D · MO</text>
+        <text x="20" y="372" font-family="Josefin Sans" font-weight="700" font-size="13" letter-spacing="3" fill="#1b1b1f">USAGE</text>
+        <g stroke="#1b1b1f" stroke-width="10">
+          <path d="M140 0V400M290 0V400M0 150H140M290 60H400M140 290H400"/>
+        </g>
+      </svg>
+    </button>
+    <figcaption class="label">
+      <span class="mv">De Stijl</span>
       <h2>AI Usage Dashboard</h2>
-      <img src="media/dashboard.jpg" width="1400" height="788" alt="AI Usage Dashboard with five local quota panels">
-      <p>A local desktop cockpit for Claude, Codex, Grok, Cursor, and Antigravity usage windows, plus DeepSeek API balance. No dashboard account. No telemetry.</p>
-      <a class="src" href="https://github.com/neyham/ai-usage-dashboard">github.com/neyham/ai-usage-dashboard</a>
-    </section>
+      <p>After Mondrian, 1930. A local cockpit for AI quotas.</p>
+    </figcaption>
+  </figure>
 
-    <section class="project">
+  <!-- ha-agent-speaker · Art Deco -->
+  <figure class="piece">
+    <button class="plate" data-id="speaker" aria-label="ha-agent-speaker — open wall label">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <defs><path id="ray" d="M200 440 L192 -20 L208 -20 Z"/></defs>
+        <rect width="400" height="400" fill="#14213d"/>
+        <g fill="#d9a840" opacity="0.16">
+          <use href="#ray" transform="rotate(-70 200 440)"/><use href="#ray" transform="rotate(-60 200 440)"/>
+          <use href="#ray" transform="rotate(-50 200 440)"/><use href="#ray" transform="rotate(-40 200 440)"/>
+          <use href="#ray" transform="rotate(-30 200 440)"/><use href="#ray" transform="rotate(-20 200 440)"/>
+          <use href="#ray" transform="rotate(-10 200 440)"/><use href="#ray"/>
+          <use href="#ray" transform="rotate(10 200 440)"/><use href="#ray" transform="rotate(20 200 440)"/>
+          <use href="#ray" transform="rotate(30 200 440)"/><use href="#ray" transform="rotate(40 200 440)"/>
+          <use href="#ray" transform="rotate(50 200 440)"/><use href="#ray" transform="rotate(60 200 440)"/>
+          <use href="#ray" transform="rotate(70 200 440)"/>
+        </g>
+        <rect x="14" y="14" width="372" height="372" fill="none" stroke="#d9a840" stroke-width="2"/>
+        <rect x="22" y="22" width="356" height="356" fill="none" stroke="#d9a840" stroke-width="0.8"/>
+        <text x="200" y="66" text-anchor="middle" font-family="Poiret One" font-size="24" letter-spacing="6" fill="#efd9a0">HOME RADIO HOUR</text>
+        <path d="M136 330 V196 Q136 112 200 112 Q264 112 264 196 V330 Z" fill="#6e4614" stroke="#d9a840" stroke-width="3"/>
+        <path d="M156 252 V200 Q156 134 200 134 Q244 134 244 200 V252 Z" fill="#3a2410" stroke="#d9a840" stroke-width="1.5"/>
+        <g stroke="#d9a840" stroke-width="2">
+          <path d="M170 252V170M185 252V146M200 252V138M215 252V146M230 252V170"/>
+        </g>
+        <circle cx="200" cy="290" r="18" fill="#efd9a0" stroke="#d9a840" stroke-width="2"/>
+        <path d="M200 290 L208 278" stroke="#3a2410" stroke-width="2.5"/>
+        <rect x="150" y="330" width="16" height="10" fill="#d9a840"/><rect x="234" y="330" width="16" height="10" fill="#d9a840"/>
+        <g stroke="#efd9a0" stroke-width="3" fill="none" stroke-linecap="round">
+          <path class="wave" d="M286 176 Q300 200 286 224"/>
+          <path class="wave" d="M304 160 Q326 200 304 240"/>
+          <path class="wave" d="M322 144 Q352 200 322 256"/>
+        </g>
+        <g stroke="#efd9a0" stroke-width="3" fill="none" stroke-linecap="round">
+          <path class="wave" d="M114 176 Q100 200 114 224"/>
+          <path class="wave" d="M96 160 Q74 200 96 240"/>
+          <path class="wave" d="M78 144 Q48 200 78 256"/>
+        </g>
+        <text x="200" y="368" text-anchor="middle" font-family="Josefin Sans" font-weight="600" font-size="10" letter-spacing="4" fill="#d9a840">WAKE · LISTEN · SPEAK</text>
+      </svg>
+    </button>
+    <figcaption class="label">
+      <span class="mv">Art Deco</span>
       <h2>ha-agent-speaker</h2>
-      <img src="media/ha-agent-speaker.jpg" width="1400" height="788" alt="A small speaker and microphone in warm window light">
-      <p>Turn a Linux box into a wake-word voice agent. Local listen, Whisper, an LLM with tools, optional Home Assistant, then Piper out of the speakers.</p>
-      <a class="src" href="https://github.com/neyham/ha-agent-speaker">github.com/neyham/ha-agent-speaker</a>
-    </section>
+      <p>Radio cabinet, c. 1932. A wake-word voice agent.</p>
+    </figcaption>
+  </figure>
 
-    <section class="project">
-      <h2>finaudit</h2>
-      <img src="media/finaudit.jpg" width="1280" height="720" alt="A stamp, fountain pen, and folder on a sunlit desk">
-      <p>A public index of financial-audit skills and official data sources. Prompts and links you can hand to an agent or follow yourself.</p>
-      <a class="src" href="https://audit.neyham.com/">audit.neyham.com</a>
-    </section>
-
-    <section class="project">
-      <h2>regnews</h2>
-      <img src="media/regnews.jpg" width="1280" height="720" alt="A folded newspaper on a sunlit oak desk">
-      <p>Headlines from nine Chinese regulators, each item a link to the original notice. No commentary.</p>
-      <a class="src" href="https://reg.neyham.com/">reg.neyham.com</a>
-    </section>
-
-    <section class="project">
-      <h2>report</h2>
-      <img src="media/report.jpg" width="1280" height="720" alt="A short stack of bound reports on a sunlit desk">
-      <p>Annual-report PDFs for 41 foreign-invested banks in China, 2024 and 2025. Source filings only.</p>
-      <a class="src" href="https://report.neyham.com/library.html">report.neyham.com/library.html</a>
-    </section>
-
-    <section class="project">
+  <!-- CAS Chill · Blue Note -->
+  <figure class="piece">
+    <button class="plate" data-id="caschill" aria-label="CAS Chill — open wall label">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <rect width="400" height="400" fill="#101010"/>
+        <rect x="0" y="0" width="400" height="232" fill="#2b7480"/>
+        <g class="record">
+          <circle cx="300" cy="150" r="124" fill="#141414"/>
+          <g fill="none" stroke="#2a2a2a" stroke-width="1.5">
+            <circle cx="300" cy="150" r="112"/><circle cx="300" cy="150" r="100"/><circle cx="300" cy="150" r="88"/>
+            <circle cx="300" cy="150" r="76"/><circle cx="300" cy="150" r="64"/><circle cx="300" cy="150" r="52"/>
+          </g>
+          <circle cx="300" cy="150" r="40" fill="#d9862f"/>
+          <path d="M300 118 A32 32 0 0 1 332 150" stroke="#101010" stroke-width="3" fill="none"/>
+          <circle cx="300" cy="150" r="4" fill="#101010"/>
+        </g>
+        <text x="24" y="196" font-family="Oswald" font-weight="700" font-size="132" letter-spacing="-2" fill="#f6eedb">CAS</text>
+        <text x="28" y="300" font-family="Bodoni Moda" font-style="italic" font-size="80" fill="#d9862f">chill</text>
+        <rect x="28" y="322" width="344" height="2" fill="#f6eedb"/>
+        <text x="28" y="350" font-family="Oswald" font-weight="500" font-size="13" letter-spacing="3.5" fill="#f6eedb">ACCOUNTING STANDARDS · IN JAZZ</text>
+        <rect x="28" y="362" width="120" height="20" fill="#2b7480"/>
+        <text x="38" y="376" font-family="Oswald" font-weight="500" font-size="11" letter-spacing="3" fill="#f6eedb">STUDY ALBUMS</text>
+      </svg>
+    </button>
+    <figcaption class="label">
+      <span class="mv">Blue Note</span>
       <h2>CAS Chill</h2>
-      <img src="media/cas-chill.jpg" width="1400" height="788" alt="CAS Chill album art: an accountant playing saxophone">
-      <p>Chinese Accounting Standards as Chill Jazz study albums.</p>
-      <p class="links">
-        <a href="https://music.163.com/artist?id=126775377">music.163.com</a>
-        <a href="https://space.bilibili.com/35899585">space.bilibili.com/35899585</a>
-      </p>
-    </section>
+      <p>After Reid Miles, 1958. Accounting standards as chill jazz.</p>
+    </figcaption>
+  </figure>
+
+  <!-- herdr-paddock · Pop Art -->
+  <figure class="piece">
+    <button class="plate" data-id="paddock" aria-label="herdr-paddock — open wall label">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <pattern id="benday" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+            <circle cx="5.5" cy="5.5" r="2.7" fill="#e2453c"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="400" fill="#f6efde"/>
+        <rect width="400" height="400" fill="url(#benday)" opacity="0.75"/>
+        <rect x="8" y="8" width="384" height="384" fill="none" stroke="#1b1b1f" stroke-width="8"/>
+        <rect x="22" y="22" width="200" height="54" fill="#ffc21a" stroke="#1b1b1f" stroke-width="4"/>
+        <text x="34" y="45" font-family="Bangers" font-size="18" letter-spacing="1" fill="#1b1b1f">MEANWHILE, AGENT 3</text>
+        <text x="34" y="66" font-family="Bangers" font-size="18" letter-spacing="1" fill="#1b1b1f">IS BLOCKED…</text>
+        <g class="bubble">
+          <path d="M226 168 L160 222 L250 178 Z" fill="#fff" stroke="#1b1b1f" stroke-width="6" stroke-linejoin="round"/>
+          <ellipse cx="288" cy="130" rx="90" ry="60" fill="#fff" stroke="#1b1b1f" stroke-width="6"/>
+          <path d="M232 170 L176 214" stroke="#fff" stroke-width="8"/>
+          <text x="290" y="152" text-anchor="middle" font-family="Bangers" font-size="62" letter-spacing="2" fill="#c62128" stroke="#1b1b1f" stroke-width="2.5" paint-order="stroke">BAA!</text>
+        </g>
+        <g class="sheep">
+          <g fill="#1b1b1f">
+            <rect x="166" y="306" width="13" height="46"/><rect x="194" y="312" width="13" height="42"/>
+            <rect x="232" y="312" width="13" height="42"/><rect x="258" y="306" width="13" height="46"/>
+          </g>
+          <g fill="#1b1b1f" stroke="#1b1b1f" stroke-width="12">
+            <circle cx="180" cy="262" r="36"/><circle cx="220" cy="248" r="40"/><circle cx="262" cy="264" r="36"/>
+            <circle cx="214" cy="292" r="38"/><circle cx="172" cy="294" r="28"/><circle cx="260" cy="296" r="30"/>
+          </g>
+          <g fill="#fffdf6">
+            <circle cx="180" cy="262" r="36"/><circle cx="220" cy="248" r="40"/><circle cx="262" cy="264" r="36"/>
+            <circle cx="214" cy="292" r="38"/><circle cx="172" cy="294" r="28"/><circle cx="260" cy="296" r="30"/>
+          </g>
+          <ellipse cx="136" cy="262" rx="26" ry="33" fill="#1b1b1f" transform="rotate(-22 136 262)"/>
+          <ellipse cx="148" cy="234" rx="14" ry="7" fill="#1b1b1f" transform="rotate(-30 148 234)"/>
+          <circle cx="128" cy="256" r="6" fill="#fff"/><circle cx="127" cy="257" r="3" fill="#1b1b1f"/>
+          <path d="M198 230 q8 -10 18 -2 M232 228 q8 -8 16 2" stroke="#1b1b1f" stroke-width="3" fill="none"/>
+        </g>
+      </svg>
+    </button>
+    <figcaption class="label">
+      <span class="mv">Pop Art</span>
+      <h2>herdr-paddock</h2>
+      <p>After Lichtenstein, 1963. A card-wall feed for agent herds.</p>
+    </figcaption>
+  </figure>
+
+
+</main>
+
+<dialog id="sheet" aria-labelledby="sheet-title">
+  <button class="close" type="button" aria-label="Close">×</button>
+  <div class="sheet">
+    <figure id="sheet-fig"><img id="sheet-img" alt=""></figure>
+    <div class="txt">
+      <div class="mv" id="sheet-mv"></div>
+      <h3 id="sheet-title"></h3>
+      <div class="after" id="sheet-after"></div>
+      <p class="desc" id="sheet-desc"></p>
+      <div class="medium" id="sheet-medium"></div>
+      <div class="links" id="sheet-links"></div>
+    </div>
   </div>
+</dialog>
+
+<footer>
+  <p>Gallery open daily. Admission free. © 2026 neyham</p>
+  <nav class="caps">
+    <a href="notes/">Notes</a>
+    <a href="https://github.com/neyham">GitHub</a>
+  </nav>
+</footer>
+
+<script>
+(function () {
+  var works = {
+    moshvr: {
+      mv: 'Bauhaus', title: 'moshVR', after: 'After Dessau, 1923',
+      img: 'media/moshvr-banner.svg', wide: true, bg: '#080e0a',
+      desc: 'A native mosh and SSH terminal for Meta Quest. No PC streaming. Confirm text to the host. Source is public; available on SideQuest.',
+      medium: 'Mosh · SSH · passthrough · voice input',
+      links: [['SideQuest', 'https://sidequestvr.com/app/62512'], ['GitHub', 'https://github.com/neyham/moshvr']]
+    },
+    dashboard: {
+      mv: 'De Stijl', title: 'AI Usage Dashboard', after: 'After Mondrian, 1930',
+      img: 'media/dashboard.jpg', wide: true, bg: '#131313',
+      desc: 'A local desktop cockpit for Claude, Codex, Grok, Cursor and Antigravity usage windows, plus DeepSeek API balance. No dashboard account. No telemetry.',
+      medium: 'Desktop · local only',
+      links: [['GitHub', 'https://github.com/neyham/ai-usage-dashboard']]
+    },
+    speaker: {
+      mv: 'Art Deco', title: 'ha-agent-speaker', after: 'Radio cabinet, c. 1932',
+      img: 'media/ha-agent-speaker.jpg',
+      desc: 'Turn a Linux box into a wake-word voice agent. Local listen, Whisper, an LLM with tools, optional Home Assistant, then Piper out of the speakers.',
+      medium: 'Wake word · Whisper · tool-using LLM · Piper',
+      links: [['GitHub', 'https://github.com/neyham/ha-agent-speaker']]
+    },
+    caschill: {
+      mv: 'Blue Note', title: 'CAS Chill', after: 'After Reid Miles, 1958',
+      img: 'media/cas-chill.jpg',
+      desc: 'Chinese Accounting Standards as Chill Jazz study albums.',
+      medium: 'Album series · chill jazz',
+      links: [['NetEase Music', 'https://music.163.com/artist?id=126775377'], ['bilibili', 'https://space.bilibili.com/35899585']]
+    },
+    paddock: {
+      mv: 'Pop Art', title: 'herdr-paddock', after: 'After Lichtenstein, 1963',
+      img: 'media/paddock.gif', wide: true, bg: '#11141b',
+      desc: 'A card-wall feed for your herdr flock. Blocked agents bleat to the top. Each card is the agent’s output, cleaned. Plain SSH. No relay, no web server.',
+      medium: 'Terminal UI · SSH · multi-agent',
+      links: [['GitHub', 'https://github.com/neyham/herdr-paddock']]
+    }
+  };
+
+  var dlg = document.getElementById('sheet');
+  var $ = function (id) { return document.getElementById(id); };
+
+  document.querySelectorAll('button.plate').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var w = works[b.dataset.id];
+      if (!w) return;
+      $('sheet-mv').textContent = w.mv;
+      $('sheet-title').textContent = w.title;
+      $('sheet-after').textContent = w.after;
+      $('sheet-desc').textContent = w.desc;
+      $('sheet-medium').textContent = w.medium;
+      $('sheet-img').src = w.img;
+      $('sheet-img').alt = w.title;
+      $('sheet-fig').style.background = w.bg || '';
+      dlg.querySelector('.sheet').classList.toggle('wide', !!w.wide);
+      $('sheet-links').innerHTML = '';
+      w.links.forEach(function (l) {
+        var a = document.createElement('a');
+        a.href = l[1];
+        a.textContent = l[0] + ' ↗';
+        $('sheet-links').appendChild(a);
+      });
+      if (dlg.showModal) dlg.showModal(); else location.href = w.links[0][1];
+    });
+  });
+  dlg.querySelector('.close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+  // Hang the plates one by one
+  var pieces = document.querySelectorAll('.piece');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    pieces.forEach(function (p) { p.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var i = Array.prototype.indexOf.call(pieces, e.target) % 3;
+      setTimeout(function () { e.target.classList.add('in'); }, i * 120);
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -6% 0px' });
+  pieces.forEach(function (p) { io.observe(p); });
+})();
+</script>
 </body>
 </html>
