@@ -1,6 +1,6 @@
 # neyham.github.io
 
-The public project showcase — the "gallery wall". [neyham.com](https://neyham.com) redirects here. The private finance Vault is a separate site and is deliberately not linked from this one.
+The public project showcase — the "gallery wall". [neyham.com](https://neyham.com) redirects here.
 
 Static HTML. The home page uses `home.css`; each project is an inline-SVG "plate" in an art-history style, and clicking one opens a wall label (`<dialog>`) with the real screenshot. `media/dashboard.jpg` and `media/paddock.gif` come from the projects' GitHub READMEs; `/notes`, `/moshvr` and `404.html` keep `style.css`.
 
